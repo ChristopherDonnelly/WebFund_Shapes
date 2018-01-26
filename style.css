@@ -1,0 +1,194 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: black;
+}
+#wrapper {
+    padding: 20px;
+}
+.square {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+.circle {
+    display: inline-block;
+    vertical-align: top;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+.treat {
+    display: inline-block;
+    vertical-align: top;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+}
+.up-triangle {
+    display: inline-block;
+    vertical-align: top;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid white;
+}
+.pacman {
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    height: 0px;
+    background-color: yellow;
+    border-radius: 50%;
+
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid black;
+    position: relative;
+}
+.pacman:before {
+    width: 10px;
+    height: 10px;
+    left: 25px;
+    top: -22px;
+    content: "";
+    position: absolute;
+    background-color: black;
+    border-radius: 15px;
+}
+
+.ghost {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+#blinky .ghost-head, #blinky .ghost-body {
+    background-color: red;
+}
+#pinky .ghost-head, #pinky .ghost-body {
+    background-color: pink;
+}
+#inky .ghost-head, #inky .ghost-body {
+    background-color: cyan;
+}
+#clyde .ghost-head, #clyde .ghost-body {
+    background-color: orange;
+}
+#scared-ghost .ghost-head, #scared-ghost .ghost-body {
+    background-color: black;
+}
+.ghost.scared .ghost-head, .ghost.scared .ghost-body {
+    background-color: blue !important;
+}
+
+.ghost-head {
+    width: 50px;
+    height: 50px;
+    /* background-color: blue; */
+    border-radius: 50%;
+    position: relative;
+}
+
+.ghost:before {
+    width: 12px;
+    height: 12px;
+    left: 29px;
+    top: 10px;
+    content: "";
+    position: absolute;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 1;
+
+    -webkit-transition: left 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: left 0.5s;
+}
+.ghost:after {
+    width: 12px;
+    height: 12px;
+    left: 9px;
+    top: 10px;
+    content: "";
+    position: absolute;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 1;
+
+    -webkit-transition: left 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: left 0.5s;
+}
+.ghost:hover::after {
+    left:0px;
+}
+.ghost:hover::before {
+    left:20px;
+}
+.ghost-head:before {
+    width: 7px;
+    height: 7px;
+    left: 29px;
+    top: 12px;
+    content: "";
+    position: absolute;
+    background-color: black;
+    border-radius: 15px;
+    z-index: 2;
+
+    -webkit-transition: left 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: left 0.5s;
+}
+.ghost-head:after {
+    width: 7px;
+    height: 7px;
+    left: 9px;
+    top: 12px;
+    content: "";
+    position: absolute;
+    background-color: black;
+    border-radius: 15px;
+    z-index: 2;
+
+    -webkit-transition: left 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: left 0.5s;
+}
+.ghost:hover .ghost-head::after {
+    left:0px;
+}
+.ghost:hover .ghost-head::before {
+    left:20px;
+}
+.ghost-body {
+    width: 50px;
+    height: 40px;
+    /* background-color: blue; */
+    position: absolute;
+    top: 20px;
+}
+.ghost:hover .ghost-feet {
+    left: -2px;
+}
+.ghost-feet {
+    width: 120%;
+    position: relative;
+    top: 26px;
+    left: 0px;
+
+    -webkit-transition: left 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: left 0.5s;
+}
+.ghost-foot {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid black;
+    display: inline-block;
+    margin-left: -2px;
+}
